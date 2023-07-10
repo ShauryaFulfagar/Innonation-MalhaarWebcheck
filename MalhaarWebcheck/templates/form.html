@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+<body>
+    <h1>Form</h1>
+    <form method="POST" action="{{ url_for('form') }}">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.field1.label }} {{ form.field1() }}
+            {% for error in form.field1.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.field2.label }} {{ form.field2() }}
+            {% for error in form.field2.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.field3.label }} {{ form.field3() }}
+            {% for error in form.field3.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.field4.label }} {{ form.field4() }}
+            {% for error in form.field4.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.field5.label }} {{ form.field5() }}
+            {% for error in form.field5.errors %}
+               
