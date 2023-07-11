@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
     <title>School Form</title>
     <style>
         .section-break {
@@ -10,44 +12,75 @@
         }
     </style>
 </head>
+
 <body>
-    <h1>School Form</h1>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <h1 class="topBar">School Form</h1>
     <form method="POST">
         {{ form.hidden_tag() }}
         <p>
-            {{ form.school_name.label }}: {{ form.school_name }}<br>
-            {{ form.teacher_name.label }}: {{ form.teacher_name }}<br>
-            {{ form.teacher_contact.label }}: {{ form.teacher_contact }}<br>
-            {{ form.student_name.label }}: {{ form.student_name }}<br>
-            {{ form.student_contact.label }}: {{ form.student_contact }}<br>
+            {{ form.school_name.label(class_='infoText') }}: {{
+            form.school_name(class_='inputBox') }}<br />
+
+            {{ form.teacher_name.label(class_='infoText') }}: {{
+            form.teacher_name(class_='inputBox') }}<br />
+
+            {{ form.teacher_contact.label(class_='infoText') }}: {{
+            form.teacher_contact(class_='inputBox') }}<br />
+
+            {{ form.student_name.label(class_='infoText') }}: {{
+            form.student_name(class_='inputBox') }}<br />
+
+            {{ form.student_contact.label(class_='infoText') }}: {{
+            form.student_contact(class_='inputBox') }}<br />
         </p>
-        <div class="section-break" style="display:{{ display1 }}">
-            <h2>Participation Section 1</h2>
-            <p>
-                {{ form.student1.label }}: {{ form.student1 }}<br>
-                {{ form.student2.label }}: {{ form.student2 }}<br>
-                {{ form.student3.label }}: {{ form.student3 }}<br>
-            </p>
+
+        <div class="section-break" style="display:{{display1}}">
+            <div style='scroll-snap-type: mandatory;' class="scrolling">
+                <script>ScrollReveal().reveal('.scrolling');</script>
+                <h2 class="topBar">Participation Section 1</h2>
+                <p>
+                    {{ form.student1.label(class_='infoText')}}: {{
+                    form.student1(class_='inputBox')}}<br />
+
+                    {{ form.student2.label(class_='infoText')}}: {{
+                    form.student2(class_='inputBox')}}<br />
+
+                    {{ form.student3.label(class_='infoText')}}: {{
+                    form.student3(class_='inputBox')}}<br />
+                </p>
+            </div>
         </div>
         <div class="section-break" style="display:{{ display2 }}">
-            <h2>Participation Section 2</h2>
+            <h2 class="topBar">Participation Section 2</h2>
             <p>
-                {{ form.student4.label }}: {{ form.student4 }}<br>
-                {{ form.student5.label }}: {{ form.student5 }}<br>
-                {{ form.student6.label }}: {{ form.student6 }}<br>
+                {{ form.student4.label(class_='infoText')}}: {{
+                form.student4(class_='inputBox')}}<br />
+
+                {{ form.student5.label(class_='infoText')}}: {{
+                form.student5(class_='inputBox')}}<br />
+
+                {{ form.student6.label(class_='infoText')}}: {{
+                form.student6(class_='inputBox')}}<br />
             </p>
         </div>
+
         <div class="section-break" style="display:{{ display3 }}">
-            <h2>Participation Section 3</h2>
+            <h2 class="topBar">Participation Section 3</h2>
             <p>
-                {{ form.student7.label }}: {{ form.student7 }}<br>
-                {{ form.student8.label }}: {{ form.student8 }}<br>
-                {{ form.student9.label }}: {{ form.student9 }}<br>
+                {{ form.student7.label(class_='infoText')}}: {{
+                form.student7(class_='inputBox')}}<br />
+
+                {{ form.student8.label(class_='infoText')}}: {{
+                form.student8(class_='inputBox')}}<br />
+
+                {{ form.student9.label(class_='infoText')}}: {{
+                form.student9(class_='inputBox')}}<br />
             </p>
         </div>
-        <p>
-            {{ form.submit }}<br>
-        </p>
+
+        <p>{{ form.submit(class_='btn')}}<br /></p>
     </form>
 </body>
+
 </html>
