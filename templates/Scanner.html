@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<body>
+<div id="qr-reader" style="width:1200px"></div>
+<div id="qr-reader-results"></div>
+</body>
+<script>
+    function onScanSuccess(decodedText, decodedResult) {
+        //pause the scanner
+        html5QrcodeScanner.pause();
+
+        if (decodedText == "1000" || decodedText == "1001" || decodedText == "1002") {
+            window.location.href = "http://localhost:5000/form/" + decodedText;
+        } else {
+            Toastify({
+                text: "QR read failed, please try again.",
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+                },
+                onClick: function () {
+                } // Callback after click
+            }).showToast();
+
+        }
+    }
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "qr-reader", { fps: 60, qrbox: 800 });
+    html5QrcodeScanner.render(onScanSuccess);
+</script>
+</html>

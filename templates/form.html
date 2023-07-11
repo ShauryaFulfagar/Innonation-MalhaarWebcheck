@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Form</title>
+    <style>
+        .section-break {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>School Form</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.school_name.label }}: {{ form.school_name }}<br>
+            {{ form.teacher_name.label }}: {{ form.teacher_name }}<br>
+            {{ form.teacher_contact.label }}: {{ form.teacher_contact }}<br>
+            {{ form.student_name.label }}: {{ form.student_name }}<br>
+            {{ form.student_contact.label }}: {{ form.student_contact }}<br>
+        </p>
+        <div class="section-break" style="display:{{ display1 }}">
+            <h2>Participation Section 1</h2>
+            <p>
+                {{ form.student1.label }}: {{ form.student1 }}<br>
+                {{ form.student2.label }}: {{ form.student2 }}<br>
+                {{ form.student3.label }}: {{ form.student3 }}<br>
+            </p>
+        </div>
+        <div class="section-break" style="display:{{ display2 }}">
+            <h2>Participation Section 2</h2>
+            <p>
+                {{ form.student4.label }}: {{ form.student4 }}<br>
+                {{ form.student5.label }}: {{ form.student5 }}<br>
+                {{ form.student6.label }}: {{ form.student6 }}<br>
+            </p>
+        </div>
+        <div class="section-break" style="display:{{ display3 }}">
+            <h2>Participation Section 3</h2>
+            <p>
+                {{ form.student7.label }}: {{ form.student7 }}<br>
+                {{ form.student8.label }}: {{ form.student8 }}<br>
+                {{ form.student9.label }}: {{ form.student9 }}<br>
+            </p>
+        </div>
+        <p>
+            {{ form.submit }}<br>
+        </p>
+    </form>
+</body>
+</html>
