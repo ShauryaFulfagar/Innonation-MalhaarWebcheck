@@ -2,36 +2,43 @@
 <html>
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
     <title>School Form</title>
 </head>
 
 <body>
-    <h1 class="topBar">School Form</h1>
+    <h1 class="topBar" style="margin-left: 20px;">School Form</h1>
     <form method="POST">
         {{ form.hidden_tag() }}
         <p>
-            {{ form.school_name.label(class_='infoText') }}: {{
-            form.school_name(class_='inputBox') }}<br />
+            {{ form.school_name.label(class_='infoText')}}
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{ form.school_name(class_='inputBox') }}
+            <br />
 
-            {{ form.teacher_name.label(class_='infoText') }}: {{
+            {{ form.teacher_name.label(class_='infoText') }}: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{
             form.teacher_name(class_='inputBox') }}<br />
 
             {{ form.teacher_contact.label(class_='infoText') }}: {{
             form.teacher_contact(class_='inputBox') }}<br />
 
-            {{ form.student_name.label(class_='infoText') }}: {{
+            {{ form.student_name.label(class_='infoText') }}: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{
             form.student_name(class_='inputBox') }}<br />
 
             {{ form.student_contact.label(class_='infoText') }}: {{
             form.student_contact(class_='inputBox') }}<br />
         </p>
 
-        <div class="section-break" style="display:{{display1}}">
-                <h2 class="topBar">Participation Section 1</h2>
+        <div class="section-break" style="display:{display1}">
+            <div class="scrolling">
+                <h2 class="topBar" style="margin-left: 20px">Participation Section 1</h2>
                 <p>
                     {{ form.student1.label(class_='infoText')}}: {{
                     form.student1(class_='inputBox')}}<br />
@@ -45,7 +52,7 @@
             </div>
         </div>
         <div class="section-break" style="display:{{ display2 }}">
-            <h2 class="topBar">Participation Section 2</h2>
+            <h2 class="topBar" style="margin-left: 20px;">Participation Section 2</h2>
             <p>
                 {{ form.student4.label(class_='infoText')}}: {{
                 form.student4(class_='inputBox')}}<br />
@@ -59,7 +66,7 @@
         </div>
 
         <div class="section-break" style="display:{{ display3 }}">
-            <h2 class="topBar">Participation Section 3</h2>
+            <h2 class="topBar" style="margin-left: 20px;">Participation Section 3</h2>
             <p>
                 {{ form.student7.label(class_='infoText')}}: {{
                 form.student7(class_='inputBox')}}<br />
