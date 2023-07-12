@@ -18,7 +18,6 @@ with open(r"Event Registration (Responses) - Form Responses 1.csv") as icsv:
     reader = csv.reader(icsv)
     entries = list(reader)
 
-
 # Define the form
 class SchoolForm(FlaskForm):
     school_name = StringField('School Name')
