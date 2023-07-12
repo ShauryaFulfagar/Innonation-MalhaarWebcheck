@@ -12,9 +12,8 @@ app.config['SECRET_KEY'] = 'your_secret_key'
 def hello():
     return render_template('Scanner.html')
 
-# Load the CSV file and store the data
-with open(
-        'D:\PycharmProjects\Innonation-MalhaarWebcheck\Event Registration (Responses) - Form Responses 1.csv') as icsv:
+# Load the- CSV file and store the data
+with open(r"Event Registration (Responses) - Form Responses 1.csv") as icsv:
     heading = next(icsv)
     reader = csv.reader(icsv)
     entries = list(reader)
