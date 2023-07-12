@@ -49,28 +49,6 @@ def form(school_code):
     # Pre-populate the form with the entry data
     form = SchoolForm(school_name=entry[1], teacher_name=entry[2], teacher_contact=entry[3], student_name=entry[4],student_contact=entry[5],student1=entry[7],student2=entry[8],student3=entry[9],student4=entry[11],student5=entry[12],student6=entry[13],student7=entry[15],student8=entry[16],student9=entry[17])
 
-    # Assign entry values to form fields
-
-    # form.school_name.default = entry[1]
-    # form.teacher_name.default = entry[2]
-    # form.teacher_contact.default = entry[3]
-    # form.student_name.default = entry[4]
-    # form.student_contact.default = entry[5]
-    # form.participate1.default = entry[6] == 'Yes'
-    # form.student1.default = entry[7]
-    # form.student2.default = entry[8]
-    # form.student3.default = entry[9]
-    # form.participate2.default = entry[10] == 'Yes'
-    # form.student4.default = entry[11]
-    # form.student5.default = entry[12]
-    # form.student6.default = entry[13]
-    # form.participate3.default = entry[14] == 'Yes'
-    # form.student7.default = entry[15]
-    # form.student8.default = entry[16]
-    # form.student9.default = entry[17]
-    # form.process()
-    # If the form is submitted and valid, add the data to a new csv file named "output.csv"
-
     if form.validate_on_submit():
 
         with open('D:\PycharmProjects\Innonation-MalhaarWebcheck\output.csv', 'a') as ocsv:
