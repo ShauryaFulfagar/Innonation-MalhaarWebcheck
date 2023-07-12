@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <script src="https://unpkg.com/scrollreveal"></script>
     <h1 class="topBar">School Form</h1>
     <form method="POST">
         {{ form.hidden_tag() }}
@@ -32,8 +31,6 @@
         </p>
 
         <div class="section-break" style="display:{{display1}}">
-            <div style='scroll-snap-type: mandatory;' class="scrolling">
-                <script>ScrollReveal().reveal('.scrolling');</script>
                 <h2 class="topBar">Participation Section 1</h2>
                 <p>
                     {{ form.student1.label(class_='infoText')}}: {{
